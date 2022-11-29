@@ -1,0 +1,57 @@
+-- CREATE TABLE Shifts(
+-- 		Shift_ID BIGSERIAL PRIMARY KEY NOT NULL,
+--  	Shift_Name text NOT NULL,
+--  	Start_Time TIME NOT NULL,
+--  	Stop_Time TIME NOT NULL
+-- 	);
+
+-- CREATE TABLE Librarians(
+-- 		Librn_ID BIGSERIAL PRIMARY KEY NOT NULL,
+-- 		Fullname Text NOT NULL,
+-- 		Email_Address VARCHAR(255) UNIQUE NOT NULL, 
+-- 		Telephone_No CHAR(10) UNIQUE NOT NULL,
+-- 		Shift_ID INT NOT NULL,
+-- 		FOREIGN KEY (Shift_ID) REFERENCES Shifts (Shift_ID) 
+-- );
+
+-- CREATE TABLE Publishing_Companies(
+-- 	Company_ID BIGSERIAL PRIMARY KEY NOT NULL,
+-- 	Company_Name TEXT UNIQUE NOT NULL,
+-- 	Co_Location VARCHAR NOT NULL
+-- );
+
+-- CREATE TABLE Authors(
+-- 	ID_No BIGSERIAL PRIMARY KEY NOT NULL,
+-- 	Author_Name TEXT NOT NULL,
+-- 	Email_Address VARCHAR(255) UNIQUE NOT NULL,
+-- 	Bio VARCHAR(255),
+-- 	Contact CHAR(10) UNIQUE NOT NULL,
+-- 	Company_ID INT NOT NULL,
+-- 	FOREIGN KEY (Company_ID) REFERENCES Publishing_Companies (Company_ID)
+-- );
+
+-- CREATE TABLE Books(
+-- 	Bk_ID BIGSERIAL PRIMARY KEY NOT NULL,
+-- 	Bk_TITLE VARCHAR(255) UNIQUE NOT NULL,
+-- 	Author_ID INT NOT NULL,
+-- 	Description VARCHAR(255) NOT NULL,
+-- 	Price VARCHAR (255) NOT NULL,
+-- 	Publish_Date DATE NOT NULL,
+-- 	Publish_Year DATE NOT NULL,
+-- 	ISBN_No VARCHAR(255) NOT NULL,
+-- 	Image BYTEA NOT NULL,
+-- 	FOREIGN KEY (Author_ID) REFERENCES Authors (ID_No)
+-- );
+
+-- CREATE TABLE Students(
+-- 	Std_ID BIGSERIAL PRIMARY KEY NOT NULL,
+-- 	Full_Name TEXT NOT NULL,
+-- 	Contact VARCHAR(255) UNIQUE NOT NULL,
+-- 	Address VARCHAR(255) NOT NULL,
+-- 	Number_of_books INT NOT NULL,
+-- 	Date_of_borrowing DATE NOT NULL,
+-- 	Date_of_return DATE NOT NULL,
+-- 	Book_ID INT NOT NULL,
+-- 	Libralian_ID INT NOT NULL,
+-- 	FOREIGN KEY (Book_ID) REFERENCES Books (Bk_ID)
+-- );
