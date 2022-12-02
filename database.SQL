@@ -76,6 +76,7 @@ VALUES ('1', 'Sarah Kiwumulo', 'sarah@gmail.com', '0709845367', '1'),
 ('5', 'Martin Habbakuk', 'martin@gmail.com', '0756437288', '2'),
 ('6', 'Patience Glory', 'glory@gmail.com', '0709857654', '2');
 select * from librarians;
+select * from librarians where Shift_ID = 1
 
 INSERT INTO publishing_companies(Company_ID, Company_Name, Co_Location)
 VALUES('1', 'Readluck Publishers', 'Easternville-UK'),
